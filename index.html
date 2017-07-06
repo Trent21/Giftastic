@@ -37,10 +37,8 @@
 
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script type="text/javascript">
-    //
-   // var foods = ["tacos", "ramen", "sushi", "cheeseburgers"];
+  
 
-      // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displaySportsInfo() {
 
         var sports = $(this).attr("data-sports");
@@ -52,31 +50,31 @@
         })
 
           .done(function(response) {
-          //storing an array of results in the results variable
+         
           var results = response.data;
-          //looping over every result item
+        
           for (var i = 0; i < results.length; i++) {
 
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-            // Creating a div with the class "item"
+       
             var gifDiv = $("<div class='sportsGifDiv'>");
-            // Storing the result item's rating
+         
             var rating = results[i].rating;
-            // Creating a paragraph tag with the result item's rating
+            
             var p = $("<p>").text("Rating: " + rating);
-            // Creating an image tag
+          
             var sportsImage = $("<img>");
 
             sportsImage.addClass("sportsGif");
-            // Giving the image tag an src attribute of a proprty pulled off the result item
+
             sportsImage.attr("src", results[i].images.fixed_height_still.url);
             sportsImage.attr("moving-image", results[i].images.fixed_height.url );
             sportsImage.attr("still-image", results[i].images.fixed_height_still.url);
-            // Appending the paragraph and personImage we created to the "gifDiv" div we created
+
             gifDiv.prepend(p);
             gifDiv.prepend(sportsImage);
-            // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-              // $("#gifs-appear-here").prepend(gifDiv);
+
+
             $("#gifs-appear-here").prepend(gifDiv);
           }
         }
@@ -84,25 +82,25 @@
 
     }    
 
-      // This function handles events where the add food button is clicked
+
       $("#add-sports").on("click", function(event) {
         event.preventDefault();
-        // This line of code will grab the input from the textbox
+
         var sports = $("#sports-input").val().trim();
 
-        // The movie from the textbox is then added to our array
-        //log
+
+
           var a = $("<button>");
-          // Adds a class of food to our button
+
           a.addClass("sports");
-          // Added a data-attribute
+
           a.attr("data-sports", sports);
-          // Provided the initial button text
+
           a.text(sports);
-          // Added the button to the buttons-view div
+
           $("#buttons-view").append(a);
       });
-       // $(document).ready(function(){
+
        $('body').on('click', "img", function(event) {
 
         var movingImage = $(this).attr("moving-image");
@@ -113,7 +111,7 @@
       
 
       $(document).on("click", ".sports", displaySportsInfo);
-      // renderButtons();
+
     
 </script>
 
