@@ -1,0 +1,23 @@
+body {
+	background-color: darkSlateGrey;
+}
+
+#buttons-view {
+	margin-left: 500px;
+	border: solid;
+	border-style: 1px black;
+	padding:10px;
+	position: absolute;
+}
+
+#input-form{
+	border: solid;
+	border-style: 1px black;
+	padding:10px;
+	position: relative;
+	float:right;
+}
+
+#gifs-appear-here {
+
+}
